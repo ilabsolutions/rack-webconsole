@@ -75,6 +75,8 @@ module Rack
     def call(env)
       if env['PATH_INFO'] == '/webconsole'
         Repl.new(@app).call(env)
+      elsif if env['PATH_INFO'] == '/webconsole_inject'       
+        AssetsInjector.new(@app).call(env)  
       else
         Assets.new(@app).call(env)
       end

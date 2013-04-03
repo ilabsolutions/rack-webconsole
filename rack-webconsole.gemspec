@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "rack/webconsole/version"
 
 Gem::Specification.new do |s|
-  s.name        = "rack-webconsole"
+  s.name        = "rack-webconsole-apache"
   s.version     = Rack::Webconsole::VERSION
   s.authors     = ["Josep M. Bach", "Josep Jaume Rey", "Oriol Gual"]
   s.email       = ["info@codegram.com"]
