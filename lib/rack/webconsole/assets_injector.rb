@@ -24,8 +24,12 @@ module Rack
         #params = req.params
 
         #return [status, headers, response] unless check_legitimate(req)
+        script = render(asset('webconsole.js'),
+                 :TOKEN => Webconsole::Repl.reset_token,
+                 :KEY_CODE => Webconsole.key_code,
+                 :CONTEXT => env['SCRIPT_NAME'] || "")
 
-        response_body = MultiJson.encode({:value => "#{code(env)}"})
+        response_body = MultiJson.encode({:value => "#{code(env)}", :js => script})
         headers = {}
         headers['Content-Type'] = 'application/json'
         headers['Content-Length'] = response_body.bytesize.to_s
@@ -41,11 +45,8 @@ module Rack
       # @return [String] the injectable code.
       def code(env)
         html_code <<
-          css_code <<
-          render(js_code,
-                 :TOKEN => Webconsole::Repl.token,
-                 :KEY_CODE => Webconsole.key_code,
-                 :CONTEXT => env['SCRIPT_NAME'] || "")
+          css_code
+          
       end
 
     end

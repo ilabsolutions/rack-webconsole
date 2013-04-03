@@ -59,8 +59,6 @@ module Rack
         javascript_with_variables
       end
 
-      private
-
       def asset(file)
         @assets ||= {}
         output = ::File.open(::File.join(::File.dirname(__FILE__), '..', '..', '..', 'public', file), 'r:UTF-8') do |f|

@@ -2,6 +2,6 @@
 module Rack
   class Webconsole
     # rack-webconsole version number.
-    VERSION = "0.1.4.apache"
+    VERSION = "0.1.5.apache"
   end
 end
