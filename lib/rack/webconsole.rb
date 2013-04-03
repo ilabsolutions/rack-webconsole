@@ -2,6 +2,7 @@
 require 'rack/webconsole/repl'
 require 'rack/webconsole/asset_helpers'
 require 'rack/webconsole/assets'
+require 'rack/webconsole/assets_injector'
 require 'rack/webconsole/sandbox'
 require 'rack/webconsole/shell'
 
