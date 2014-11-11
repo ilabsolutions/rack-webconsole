@@ -2,6 +2,7 @@
 require 'rack/webconsole/repl'
 require 'rack/webconsole/asset_helpers'
 require 'rack/webconsole/assets'
+require 'rack/webconsole/assets_injector'
 require 'rack/webconsole/sandbox'
 require 'rack/webconsole/shell'
 
@@ -75,6 +76,8 @@ module Rack
     def call(env)
       if env['PATH_INFO'] == '/webconsole'
         Repl.new(@app).call(env)
+      elsif env['PATH_INFO'] == '/webconsole_inject'       
+        AssetsInjector.new(@app).call(env)  
       else
         Assets.new(@app).call(env)
       end
