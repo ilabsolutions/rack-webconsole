@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'bluecloth'
   s.add_development_dependency 'rake'
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.files         = [".gitignore", ".rvmrc", ".travis.yml", "Gemfile", "Gemfile.lock", "History", "Rakefile", "Readme.md", "lib/rack-webconsole.rb", "lib/rack/webconsole.rb", "lib/rack/webconsole/asset_helpers.rb", "lib/rack/webconsole/assets.rb", "lib/rack/webconsole/railtie.rb", "lib/rack/webconsole/repl.rb", "lib/rack/webconsole/sandbox.rb", "lib/rack/webconsole/shell.rb", "lib/rack/webconsole/version.rb", "public/jquery.html", "public/webconsole.css", "public/webconsole.html", "public/webconsole.js", "rack-webconsole.gemspec", "spec/rack/webconsole/asset_helpers_spec.rb", "spec/rack/webconsole/assets_spec.rb", "spec/rack/webconsole/repl_spec.rb", "spec/rack/webconsole/sandbox_spec.rb", "spec/rack/webconsole/shell_spec.rb", "spec/rack/webconsole_spec.rb", "spec/spec_helper.rb"]
+  s.test_files    = []
   s.require_paths = ["lib"]
 end
